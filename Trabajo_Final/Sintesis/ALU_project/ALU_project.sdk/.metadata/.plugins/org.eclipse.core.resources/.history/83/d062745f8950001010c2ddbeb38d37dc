@@ -1,0 +1,23 @@
+#include "sleep.h"
+#include "xparameters.h"
+#include "alu_ip.h"
+
+typedef enum {
+	SUMA,
+	RESTA,
+	MULTIPLICACION,
+	DIVISION,
+	MODULO,
+	SHIFTEO
+};
+
+int main (void) {
+
+	unsigned int A         = 0x02;
+	unsigned int B         = 0x03;
+	unsigned int operation = SUMA;
+	unsigned int result    = 0x00;
+	unsigned int carry     = 0x00;
+
+}
+

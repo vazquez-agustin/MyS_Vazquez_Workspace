@@ -1,0 +1,15 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ipshared/6aed/hdl/alu_ip_v1_0_IP_ALU.vhd" \
+"../../../bd/design_1/ipshared/6aed/hdl/alu_ip_v1_0.vhd" \
+"../../../bd/design_1/ipshared/6aed/src/Adder_Nbit.vhd" \
+"../../../bd/design_1/ipshared/6aed/src/Subtractor_4bit.vhd" \
+"../../../bd/design_1/ipshared/6aed/src/Multiplier_4bit.vhd" \
+"../../../bd/design_1/ipshared/6aed/src/Divider_4bit.vhd" \
+"../../../bd/design_1/ipshared/6aed/src/Barrel_ShifterNb.vhd" \
+"../../../bd/design_1/ipshared/6aed/src/ALU.vhd" \
+"../../../bd/design_1/ipshared/6aed/src/Adder_1bit.vhd" \
+"../../../bd/design_1/ip/design_1_alu_ip_0_0/sim/design_1_alu_ip_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+nosort

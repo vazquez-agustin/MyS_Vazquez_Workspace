@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Mon Jun 23 23:55:52 2025
+# Process ID: 25104
+# Current directory: c:/Users/agust/MyS_Vazquez_Workspace/Trabajo_Final/Repositorio/managed_ip_project/managed_ip_project.tmp/alu_ip_v1_0_project/alu_ip_v1_0_project.runs/impl_1
+# Command line: vivado.exe -log alu_ip_v1_0.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source alu_ip_v1_0.tcl -notrace
+# Log file: c:/Users/agust/MyS_Vazquez_Workspace/Trabajo_Final/Repositorio/managed_ip_project/managed_ip_project.tmp/alu_ip_v1_0_project/alu_ip_v1_0_project.runs/impl_1/alu_ip_v1_0.vdi
+# Journal file: c:/Users/agust/MyS_Vazquez_Workspace/Trabajo_Final/Repositorio/managed_ip_project/managed_ip_project.tmp/alu_ip_v1_0_project/alu_ip_v1_0_project.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source alu_ip_v1_0.tcl -notrace

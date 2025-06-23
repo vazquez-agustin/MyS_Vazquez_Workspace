@@ -1,0 +1,81 @@
+#include "sleep.h"
+#include "xparameters.h"
+#include "alu_ip.h"
+
+typedef enum {
+	SUMA = 0,
+	RESTA,
+	MULTIPLICACION,
+	DIVISION,
+	MODULO,
+	SHIFTEO
+} operation_t;
+
+int main (void) {
+
+	unsigned int A          = 0x03;
+	unsigned int B          = 0x02;
+	unsigned int raw_result = 0x00;
+
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG0_OFFSET, A);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG1_OFFSET, B);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG2_OFFSET, SUMA);
+
+	raw_result = ALU_IP_mReadReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG3_OFFSET);
+
+	xil_printf("Suma A + B: %d + %d = %d\r\n", A, B, 0xFF & raw_result);
+
+	sleep(1);
+
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG0_OFFSET, A);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG1_OFFSET, B);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG2_OFFSET, RESTA);
+
+	raw_result = ALU_IP_mReadReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG3_OFFSET);
+
+	xil_printf("Resta A - B: %d - %d = %d\r\n", A, B, 0xFF & raw_result);
+
+	sleep(1);
+
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG0_OFFSET, A);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG1_OFFSET, B);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG2_OFFSET, MULTIPLICACION);
+
+	raw_result = ALU_IP_mReadReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG3_OFFSET);
+
+	xil_printf("Multiplicacion A * B: %d * %d = %d\r\n", A, B, 0xFF & raw_result);
+
+	sleep(1);
+
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG0_OFFSET, A);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG1_OFFSET, B);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG2_OFFSET, DIVISION);
+
+	raw_result = ALU_IP_mReadReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG3_OFFSET);
+
+	xil_printf("Division (cociente) A / B: %d / %d = %d\r\n", A, B, 0xFF & raw_result);
+
+	sleep(1);
+
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG0_OFFSET, A);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG1_OFFSET, B);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG2_OFFSET, MODULO);
+
+	raw_result = ALU_IP_mReadReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG3_OFFSET);
+
+	xil_printf("Modulo A %% B: %d %% %d = %d\r\n", A, B, 0xFF & raw_result);
+
+	sleep(1);
+
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG0_OFFSET, A);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG1_OFFSET, B);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG2_OFFSET, SHIFTEO);
+
+	raw_result = ALU_IP_mReadReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG3_OFFSET);
+
+	xil_printf("Shifteo A >> B: %d >> %d = %d\r\n", A, B, 0xFF & raw_result);
+
+	sleep(1);
+
+}
+

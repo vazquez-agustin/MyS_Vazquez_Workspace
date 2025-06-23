@@ -1,0 +1,30 @@
+#include "sleep.h"
+#include "xparameters.h"
+#include "alu_ip.h"
+
+typedef enum {
+	SUMA,
+	RESTA,
+	MULTIPLICACION,
+	DIVISION,
+	MODULO,
+	SHIFTEO
+};
+
+int main (void) {
+
+	unsigned int A          = 0x02;
+	unsigned int B          = 0x03;
+	unsigned int operation  = SUMA;
+	unsigned int raw_result = 0x00;
+
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG0_OFFSET, A);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG1_OFFSET, B);
+	ALU_IP_mWriteReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG2_OFFSET, operation);
+
+	raw_result = ALU_IP_mReadReg(XPAR_ALU_IP_0_IP_ALU_BASEADDR, ALU_IP_IP_ALU_SLV_REG3_OFFSET);
+
+	xil_printf("Suma A + B: %d + %d = %d\r\n", A, B, 0xFF & raw_result);
+
+}
+
